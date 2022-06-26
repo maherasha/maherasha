@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-k8s
+spec:
+  selector:
+    matchLabels:
+      app: spring-boot-k8s
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: spring-boot-k8s
+    spec:
+      containers:
+        - name: springboot-mongodb3
+          image: springboot-mongodb:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+           - containerPort: 8080
+
+#        - name: springmongoimage
+#          image: mongo:latest
+#          imagePullPolicy: IfNotPresent
+#          ports:
+#           - containerPort: 27017

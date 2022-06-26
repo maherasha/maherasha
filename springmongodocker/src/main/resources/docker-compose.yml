@@ -1,0 +1,14 @@
+services:
+  springmongoimage:
+    image: mongo:latest
+    container_name: springmongoimage
+    ports:
+      - 27017:27017
+
+  springboot-mongodb:
+    image: springboot-mongodb:1.0
+    container_name: springboot-mongodb
+    ports:
+      - 8080:8080
+    links:
+      - springmongoimage
