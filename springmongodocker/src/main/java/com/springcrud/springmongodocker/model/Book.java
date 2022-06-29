@@ -28,7 +28,8 @@ public class Book {
 
         this.name = "Maher";
 
-        String nameOpt = Optional.ofNullable(getName()).orElseGet(()-> "test");
+        String nameOpt = Optional.ofNullable(getName()).orElse( "test");// the prob with else is the object goig to be created anyways
+
 
 
     }
